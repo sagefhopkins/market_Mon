@@ -70,5 +70,5 @@ def regex_Seperate(data):
             print "rl1 returned false"
     except KeyError:
         print "error occurred"
-    except TypeError:
+    except:
         print "error occurred"
