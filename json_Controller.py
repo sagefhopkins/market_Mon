@@ -70,3 +70,4 @@ def regex_Seperate(data):
             print "rl1 returned false"
     except(KeyError, TypeError):
         print "error occurred"
+        pass
