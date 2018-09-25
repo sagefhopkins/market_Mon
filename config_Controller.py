@@ -33,7 +33,6 @@ def config_Load_Cur():
                         time.sleep(1)
                         whileloop = 0
                     except (IOError, TypeError, KeyError):
-                        print Fore.RED + "WebAPI Timed out, Retrying"
                         time.sleep(3)
             else:
                 print "config_Load_Cur failed"
