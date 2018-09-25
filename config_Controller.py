@@ -34,5 +34,7 @@ def config_Load_Cur():
                     print "Done sleeping!"
                 except (IOError, TypeError, KeyError):
                     print "Error encountered moving on"
+                    time.sleep(15)
+
             else:
                 print "config_Load_Cur failed"
