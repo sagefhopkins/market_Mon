@@ -2,7 +2,7 @@ import urllib as url
 import json
 import re
 import io
-from colorama import init
+from colorama import init, Fore, Style, Back
 
 #Imports JSON data from web API, and returns data
 def json_Import_Cur(currency):
