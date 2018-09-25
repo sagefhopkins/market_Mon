@@ -26,6 +26,6 @@ def config_Load_Cur():
                 data = jsc.json_Import_Cur(each_key)
                 final = jsc.regex_Seperate(data)
                 dbc.database_Insert('cur_Mon', final[0], final[1], final[2], final[3])
-                print data[0] + data[1] + data[2] + data[3] + " inserted into database"
+                print final[0] + final[1] + final[2] + final[3] + " inserted into database"
             else:
                 print "config_Load_Cur failed"
