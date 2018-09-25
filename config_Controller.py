@@ -25,7 +25,7 @@ def config_Load_Cur():
             print each_val
             whileloop = 1
             if each_val == 'True':
-                while whileloop == 1
+                while whileloop == 1:
                     try:
                         data = jsc.json_Import_Cur(each_key)
                         final = jsc.regex_Seperate(data)
