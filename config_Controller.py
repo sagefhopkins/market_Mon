@@ -13,6 +13,7 @@ def config_Add_Cur(currency):
     print currency + " added to config.ini"
 
 def config_Load_Cur():
+    print "config_Load_Cur"
     with open('config.ini') as f:
         conf = f.read()
     config = ConfigParser.RawConfigParser(allow_no_value=True)
