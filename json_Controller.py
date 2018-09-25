@@ -10,7 +10,7 @@ def json_Import_Cur(currency):
 
     return data
 def regex_Seperate(data):
-    var = json.dumps(data[])
+    var = json.dumps(data['Realtime Currency Exchange Rate'])
     final = []
 
     rl1 = re.search(r'("3.(.*?),)', var, )
