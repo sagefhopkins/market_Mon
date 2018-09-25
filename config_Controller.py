@@ -24,12 +24,16 @@ def config_Load_Cur():
             print each_key
             print each_val
             if each_val == 'True':
-                data = jsc.json_Import_Cur(each_key)
-                final = jsc.regex_Seperate(data)
-                dbc.database_Insert('cur_Mon', final[0], final[1], final[2], final[3])
-                print final[0] + final[1] + final[2] + final[3] + " inserted into database"
-                print "Wating a few seconds"
-                time.sleep(5)
-                print "Done sleeping!"
+                try:
+
+                    data = jsc.json_Import_Cur(each_key)
+                    final = jsc.regex_Seperate(data)
+                    dbc.database_Insert('cur_Mon', final[0], final[1], final[2], final[3])
+                    print final[0] + final[1] + final[2] + final[3] + " inserted into database"
+                    print "Wating a few seconds"
+                    time.sleep(5)
+                    print "Done sleeping!"
+                except IOError:
+                    print "Error encountered moving on"
             else:
                 print "config_Load_Cur failed"
