@@ -32,7 +32,7 @@ def config_Load_Cur():
                     print "Wating a few seconds"
                     time.sleep(5)
                     print "Done sleeping!"
-                except IOError:
+                except (IOError, TypeError, KeyError):
                     print "Error encountered moving on"
             else:
                 print "config_Load_Cur failed"
