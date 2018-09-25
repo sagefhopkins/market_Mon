@@ -8,11 +8,16 @@ def database_Connect():
 
 #Inserts new rows into a table, this is created to ensure uniformity between rows
 def database_Insert(table, ticker, currency, exchange, date ):
-    sql = database_Connect()
-    query = "INSERT INTO " + table + " VALUES('" + ticker + "', '" + currency + "', '" + exchange + "', '" + date + "')"
-    sql.execute(query)
-    sql.commit()
-    print (query + "Entered into database!")
+    try:
+
+        sql = database_Connect()
+        query = "INSERT INTO " + table + " VALUES('" + ticker + "', '" + currency + "', '" + exchange + "', '" + date + "')"
+        sql.execute(query)
+        sql.commit()
+        print (query + "Entered into database!")
+    except(TypeError, KeyError):
+        pass
+        print "Error occurred databasing!"
 
 #Queries the table, and returns all values which either match or include the
 #name string in their overall value
