@@ -23,18 +23,20 @@ def config_Load_Cur():
         for (each_key, each_val) in config.items(each_section):
             print each_key
             print each_val
+            whileloop = 1
             if each_val == 'True':
-                try:
-                    data = jsc.json_Import_Cur(each_key)
-                    final = jsc.regex_Seperate(data)
-                    dbc.database_Insert('cur_Mon', final[0], final[1], final[2], final[3])
-                    print final[0] + final[1] + final[2] + final[3] + " inserted into database"
-                    print "Wating a few seconds"
-                    time.sleep(5)
-                    print "Done sleeping!"
-                except (IOError, TypeError, KeyError):
-                    print "Error encountered moving on"
-                    time.sleep(15)
-
+                while (whileloop = 1)
+                    try:
+                        data = jsc.json_Import_Cur(each_key)
+                        final = jsc.regex_Seperate(data)
+                        dbc.database_Insert('cur_Mon', final[0], final[1], final[2], final[3])
+                        print final[0] + final[1] + final[2] + final[3] + " inserted into database"
+                        print "Wating a few seconds"
+                        time.sleep(5)
+                        print "Done sleeping!"
+                        whileloop = 0
+                    except (IOError, TypeError, KeyError):
+                        print "Error encountered moving on"
+                        time.sleep(15)
             else:
                 print "config_Load_Cur failed"
