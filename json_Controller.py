@@ -57,6 +57,7 @@ def regex_Seperate(data):
                             so4 = ss4.group()
                             fl4 = (re.sub(':|"', '', so4))
                             final.insert(4, fl4)
+                            return final
                         else:
                             print"ss4 has returned false"
                     else:
@@ -69,4 +70,3 @@ def regex_Seperate(data):
             print "rl1 returned false"
     except KeyError:
         print "error occurred"
-    return final
