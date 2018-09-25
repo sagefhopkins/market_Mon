@@ -1,12 +1,16 @@
 import urllib as url
 import json
 import re
+import IO
 
 #Imports JSON data from web API, and returns data
 def json_Import_Cur(currency):
-    api = "http://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=USD&to_currency=" + currency + "&apikey=GPR3TT0J4AM2EBBQ"
-    response = url.urlopen(api)
-    data = json.loads(response.read())
+    try:
+        api = "http://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=USD&to_currency=" + currency + "&apikey=GPR3TT0J4AM2EBBQ"
+        response = url.urlopen(api)
+        data = json.loads(response.read())
+    except IOError:
+        print "Issue encountered on json_Import_Cur"
 
     return data
 def regex_Seperate(data):

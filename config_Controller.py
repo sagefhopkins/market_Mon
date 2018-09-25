@@ -25,7 +25,6 @@ def config_Load_Cur():
             print each_val
             if each_val == 'True':
                 try:
-
                     data = jsc.json_Import_Cur(each_key)
                     final = jsc.regex_Seperate(data)
                     dbc.database_Insert('cur_Mon', final[0], final[1], final[2], final[3])
