@@ -3,6 +3,7 @@ import io
 import json_Controller as jsc
 import database_Controller as dbc
 import time
+from colorama import init, Fore, Back, Style
 
 
 def config_Add_Cur(currency):
@@ -27,8 +28,8 @@ def config_Load_Cur():
                         data = jsc.json_Import_Cur(each_key)
                         final = jsc.regex_Seperate(data)
                         dbc.database_Insert('cur_Mon', final[0], final[1], final[2], final[3])
-                        print "-------------------------------------------------------------------------------------------"
-                        print final[0] + final[1] + final[2] + final[3] + " inserted into database"
+                        print Fore.GREEN + "-------------------------------------------------------------------------------------------"
+                        print Fore.CYAN + Back.WHITE + final[0] + Fore.GREEN + Back.WHITE + final[1] + Fore.MAGENTA + Back.WHITE + final[2] + Fore.RED + Back.WHITE + final[3] + " inserted into database"
                         time.sleep(1)
                         whileloop = 0
                     except (IOError, TypeError, KeyError):

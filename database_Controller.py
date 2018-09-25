@@ -1,4 +1,5 @@
 import sqlite3
+from colorama import init
 
 #Initializes database connection and returns connection to function caller
 def database_Connect():
