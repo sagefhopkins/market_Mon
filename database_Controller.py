@@ -9,7 +9,7 @@ def database_Connect():
 #Inserts new rows into a table, this is created to ensure uniformity between rows
 def database_Insert(table, ticker, currency, exchange, open, high, low, close, montior, date ):
     sql = database_Connect()
-    query = "INSERT INTO " + table + " VALUES('" + ticker + "', '" + currency + "', '" + exchange + "', '" + open + "', '" + high + "', '" + low + "', '" + close + "', '" + monitor + "', '" + date + "')"
+    query = "INSERT INTO " + table + " VALUES('" + ticker + "', '" + currency + "', '" + exchange + date + "')"
     sql.execute(query)
     sql.commit()
     print (query + "Entered into database!")
@@ -26,7 +26,7 @@ def database_Read(table, currency):
 #to ensure uniformity between tables
 def database_Table(name):
     sql = database_Connect()
-    query = "CREATE TABLE " + name + " (currency text, exchange int, open int, high int, low int, close int, monitor int, date timestamp)"
+    query = "CREATE TABLE " + name + " (ticker text , currency text, exchange int, date text)"
     sql.execute(query)
     sql.commit()
     print name + " New table created!"

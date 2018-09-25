@@ -75,8 +75,3 @@ def json_Interpret_Cur(currency):
     cur_Name = final[1]
     cur_Exchange = final[2]
     cur_Date = final[3]
-
-    print cur_Ticker
-    print cur_Name
-    print cur_Exchange
-    print cur_Date
