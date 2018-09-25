@@ -13,7 +13,6 @@ def database_Insert(table, ticker, currency, exchange, date ):
         query = "INSERT INTO " + table + " VALUES('" + ticker + "', '" + currency + "', '" + exchange + "', '" + date + "')"
         sql.execute(query)
         sql.commit()
-        print (query + "Entered into database!")
     except(TypeError, KeyError):
         pass
         print "Error occurred databasing!"
