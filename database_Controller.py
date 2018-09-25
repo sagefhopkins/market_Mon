@@ -7,7 +7,7 @@ def database_Connect():
     return connection
 
 #Inserts new rows into a table, this is created to ensure uniformity between rows
-def database_Insert(table, ticker, currency, exchange, open, high, low, close, montior, date ):
+def database_Insert(table, ticker, currency, exchange, date ):
     sql = database_Connect()
     query = "INSERT INTO " + table + " VALUES('" + ticker + "', '" + currency + "', '" + exchange + date + "')"
     sql.execute(query)

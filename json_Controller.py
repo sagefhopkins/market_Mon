@@ -63,15 +63,3 @@ def regex_Seperate(data):
     else:
         print "rl1 returned false"
     return final
-    
-
-def json_Interpret_Cur(currency):
-    data = json_Import_Cur(currency)
-    final = regex_Seperate(data)
-    print final
-
-    #Variables for storing currency data
-    cur_Ticker = final[0]
-    cur_Name = final[1]
-    cur_Exchange = final[2]
-    cur_Date = final[3]
