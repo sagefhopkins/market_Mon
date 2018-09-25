@@ -67,6 +67,6 @@ def regex_Seperate(data):
                 print "rl2 returned false"
         else:
             print "rl1 returned false"
-    except IOError:
+    except KeyError:
         print "error occurred"
     return final
