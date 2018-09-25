@@ -2,6 +2,7 @@ import ConfigParser
 import io
 import json_Controller as jsc
 import database_Controller as dbc
+import time
 
 
 def config_Add_Cur(currency):
@@ -27,5 +28,8 @@ def config_Load_Cur():
                 final = jsc.regex_Seperate(data)
                 dbc.database_Insert('cur_Mon', final[0], final[1], final[2], final[3])
                 print final[0] + final[1] + final[2] + final[3] + " inserted into database"
+                print "Wating a few seconds"
+                time.sleep(5)
+                print "Done sleeping!"
             else:
                 print "config_Load_Cur failed"
