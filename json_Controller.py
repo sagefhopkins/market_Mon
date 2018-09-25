@@ -32,18 +32,18 @@ def regex_Seperate(data):
                 final.insert(1, fl1)
             else:
                 print "ss1 has returned false"
-                if rl2:
-                    ob2 = rl2.group()
-                    ss2 = re.search(r'(:(.*?)"(.*?)")', ob2, )
-                    if ss2:
-                        so2 = ss2.group()
-                        fl2 = (re.sub(':|"', '', so2))
-                        final.insert(2, fl2)
-                    else:
-                        print "ss2 has returned false"
-                    if rl3:
-                        ob3 = rl3.group()
-                        ss3 = re.search(r'(:(.*?)"(.*?)")', ob3, )
+            if rl2:
+                ob2 = rl2.group()
+                ss2 = re.search(r'(:(.*?)"(.*?)")', ob2, )
+                if ss2:
+                    so2 = ss2.group()
+                    fl2 = (re.sub(':|"', '', so2))
+                    final.insert(2, fl2)
+                else:
+                    print "ss2 has returned false"
+                if rl3:
+                    ob3 = rl3.group()
+                    ss3 = re.search(r'(:(.*?)"(.*?)")', ob3, )
                     if ss3:
                         so3 = ss3.group()
                         fl3 = (re.sub(':|"', '' , so3))
@@ -68,5 +68,5 @@ def regex_Seperate(data):
         else:
             print "rl1 returned false"
     except IOError:
-        print "Error encountered!"
+        print "error occurred"
     return final
