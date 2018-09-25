@@ -70,6 +70,6 @@ def regex_Seperate(data):
         else:
             print "rl1 returned false"
     except(KeyError, TypeError):
-        print "-------------------------------------------------------------------------------------------"
-        print "Error Encountered"
+        print Fore.RED + "-------------------------------------------------------------------------------------------"
+        print Fore.RED + "Error Encountered"
         pass

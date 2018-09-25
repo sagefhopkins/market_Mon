@@ -29,11 +29,11 @@ def config_Load_Cur():
                         final = jsc.regex_Seperate(data)
                         dbc.database_Insert('cur_Mon', final[0], final[1], final[2], final[3])
                         print Fore.GREEN + "-------------------------------------------------------------------------------------------"
-                        print Fore.CYAN + Back.WHITE + final[0] + Fore.GREEN + Back.WHITE + final[1] + Fore.MAGENTA + Back.WHITE + final[2] + Fore.RED + Back.WHITE + final[3] + Fore.BLUE + Back.WHITE +" inserted into database" + Style.RESET_ALL
+                        print Style.BRIGHT + Fore.CYAN  + final[0] + Fore.GREEN + final[1] + Style.NORMAL + Fore.MAGENTA + Back.WHITE + final[2] + Fore.RED + Back.WHITE + final[3] + Fore.BLUE + Back.WHITE +" inserted into database" + Style.RESET_ALL
                         time.sleep(1)
                         whileloop = 0
                     except (IOError, TypeError, KeyError):
-                        print "WebAPI Timed out, Retrying"
+                        print Fore.RED + "WebAPI Timed out, Retrying"
                         time.sleep(3)
             else:
                 print "config_Load_Cur failed"
