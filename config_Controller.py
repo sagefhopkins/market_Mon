@@ -29,7 +29,7 @@ def config_Load_Cur():
                         final = jsc.regex_Seperate(data)
                         dbc.database_Insert('cur_Mon', final[0], final[1], final[2], final[3])
                         print Fore.GREEN + "-------------------------------------------------------------------------------------------"
-                        print Fore.CYAN + Back.WHITE + final[0] + Fore.GREEN + Back.WHITE + final[1] + Fore.MAGENTA + Back.WHITE + final[2] + Fore.RED + Back.WHITE + final[3] + " inserted into database"
+                        print Fore.CYAN + Back.WHITE + final[0] + Fore.GREEN + Back.WHITE + final[1] + Fore.MAGENTA + Back.WHITE + final[2] + Fore.RED + Back.WHITE + final[3] + " inserted into database" + Style.RESET_ALL
                         time.sleep(1)
                         whileloop = 0
                     except (IOError, TypeError, KeyError):
