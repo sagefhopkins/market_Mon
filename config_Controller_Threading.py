@@ -19,7 +19,6 @@ def config_Add_Cur(currency):
 def config_Load_Cur():
     class Thread(threading.Thread):
         def run(self):
-            print (re.sub('Thread-|{}', '', threading.current_thread().name))
             whileloop = 1
             while whileloop == 1:
                 try:
@@ -46,6 +45,5 @@ def config_Load_Cur():
                     thread = Thread(name = "Thread-{}".format(each_key), kwargs = {each_key: currency})
                     print "Starting Thread-{}".format(each_key)
                     thread.start()
-                    time.sleep(10)
                 else:
                     print "Error starting Thread-{}".format(each_key)
