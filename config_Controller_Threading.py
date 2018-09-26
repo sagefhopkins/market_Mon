@@ -5,6 +5,7 @@ import database_Controller as dbc
 import time
 from colorama import init, Fore, Back, Style
 import threading
+import re
 
 
 def config_Add_Cur(currency):
@@ -21,7 +22,8 @@ def config_Load_Cur():
             whileloop = 1
             while whileloop == 1:
                 try:
-                    data = jsc.json_Import_Cur(currency)
+                    #Check this crazy shit, I have no idea if this will actually work for storing variables in a non shared memory space
+                    data = jsc.json_Import_Cur(re.sub('Thread-|{}', '', threading.currentThread()))
                     final = jsc.regex_Seperate(data)
                     dbc.database_Insert('cur_Mon', final[0], final[1], final[2], final[3])
                     print Fore.GREEN + "-------------------------------------------------------------------------------------------"
