@@ -40,20 +40,14 @@ def config_Load_Cur():
         config.readfp(io.BytesIO(conf))
         for each_section in config.sections():
             for (each_key, each_val) in config.items(each_section):
-                if each_val == 'True':
+                global var
+                var = 1
+                if var != 5:
+                    var + 1
                     currency = each_key
                     thread = Thread(name = "Thread-{}".format(each_key), kwargs = {each_key: currency})
                     print "Starting Thread-{}".format(each_key)
                     thread.start()
-                    global var
-                    var = 1
-                    if var == 5:
-                        print "Throttle waitng 62 seconds"
-                        time.sleep(62)
-                        var = 0
-                    else:
-                        var = (var + 1)
-                        print var
-
                 else:
-                    print "Error starting Thread-{}".format(each_key)
+                    time.sleep(62)
+                    print "Waitng for cooldown on throttle"
