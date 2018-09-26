@@ -40,4 +40,6 @@ def config_Load_Cur():
                                 time.sleep(3)
                     else:
                         print "config_Load_Cur failed"
-            Thread.start()
+            thread = Thread(name = "Thread-{}".format(x + 1))
+            print "Starting Thread-{}".format(x + 1)
+            thread.start()
