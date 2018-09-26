@@ -16,10 +16,9 @@ def config_Add_Cur(currency):
     print currency + " added to config.ini"
 
 def config_Load_Cur():
-    class Thread(threading.Thread, currency):
+    class Thread(threading.Thread):
         def __init__(self, currency):
             threading.Thread.__init__(self)
-
             print currency
         def run(self):
             whileloop = 1
