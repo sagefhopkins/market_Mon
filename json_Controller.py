@@ -6,13 +6,21 @@ from colorama import init, Fore, Style, Back
 
 #Imports JSON data from web API, and returns data
 def json_Import_Cur(currency):
-    try:
-        api = "http://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=USD&to_currency=" + currency + "&apikey=GPR3TT0J4AM2EBBQ"
-        response = url.urlopen(api)
-        data = json.loads(response.read())
-        return data
-    except IOError:
-        print "Issue encountered on json_Import_Cur"
+    whileloop = 1
+    while whileloop == 1:
+        try:
+            api = "http://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=USD&to_currency=" + currency + "&apikey=GPR3TT0J4AM2EBBQ"
+            response = url.urlopen(api)
+            data = json.loads(response.read())
+            whileloop = 0
+            return data
+        except IOError:
+            print "Issue encountered on json_Import_Cur"
+        except ValueError:
+            print api
+            print data
+            print response
+
 def regex_Seperate(data):
     try:
         var = json.dumps(data['Realtime Currency Exchange Rate'])
