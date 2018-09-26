@@ -15,8 +15,8 @@ def json_Import_Cur(currency):
 
     return data
 def regex_Seperate(data):
+    whileloop == 1
     try:
-        whileloop == 1
         while whileloop == 1:
             var = json.dumps(data['Realtime Currency Exchange Rate'])
             final = []
