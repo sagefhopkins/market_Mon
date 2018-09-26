@@ -45,7 +45,8 @@ def config_Load_Cur():
                     thread = Thread(name = "Thread-{}".format(each_key), kwargs = {each_key: currency})
                     print "Starting Thread-{}".format(each_key)
                     thread.start()
-                    global var = 1
+                    global var
+                    var = 1
                     if var == 5:
                         print "Throttle waitng 62 seconds"
                         time.sleep(62)
