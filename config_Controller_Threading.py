@@ -45,12 +45,12 @@ def config_Load_Cur():
                     thread = Thread(name = "Thread-{}".format(each_key), kwargs = {each_key: currency})
                     print "Starting Thread-{}".format(each_key)
                     thread.start()
-                    throttle = 0
-                    if throttle == 5:
+                    var = 0
+                    if var == 5:
                         time.sleep(62)
-                        throttle = 0
+                        var = 0
                     else:
-                        throttle = throttle + 1
+                        var++
 
                 else:
                     print "Error starting Thread-{}".format(each_key)
