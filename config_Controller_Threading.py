@@ -19,10 +19,11 @@ def config_Add_Cur(currency):
 def config_Load_Cur():
     class Thread(threading.Thread):
         def run(self):
+            print (re.sub('Thread-|{}', '', threading.get_indent()))
             whileloop = 1
             while whileloop == 1:
                 try:
-                    print (re.sub('Thread-|{}', '', threading.currentThread()))
+
                     #Check this crazy shit, I have no idea if this will actually work for storing variables in a non shared memory space
                     data = jsc.json_Import_Cur(re.sub('Thread-', '', threading.get_indent()))
                     final = jsc.regex_Seperate(data)
