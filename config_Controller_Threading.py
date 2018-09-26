@@ -51,7 +51,7 @@ def config_Load_Cur():
                         time.sleep(62)
                         var = 0
                     else:
-                        var = var + 1
+                        var = (var + 1)
                         print var
 
                 else:
