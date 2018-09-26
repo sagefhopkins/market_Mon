@@ -15,8 +15,9 @@ def json_Import_Cur(currency):
             data = json.loads(response.read())
             whileloop = 0
             return data
-        except IOError:
+        except(except e) IOError:
             print "Issue encountered on json_Import_Cur"
+            print e
             time.sleep(20)
         except ValueError:
             print api
