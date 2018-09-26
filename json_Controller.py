@@ -18,7 +18,6 @@ def json_Import_Cur(currency):
             print "Issue encountered on json_Import_Cur"
         except ValueError:
             print api
-            print data
             print response
 
 def regex_Seperate(data):
