@@ -38,9 +38,9 @@ def config_Load_Cur():
                                 whileloop = 0
                             except (IOError, TypeError, KeyError):
                                 time.sleep(3)
-                else:
-                    print "config_Load_Cur failed"
-            for x in range(157):
-                thread = Thread(name = "Thread-{}".format(x + 1))
-                print "Starting Thread-{}".format(x + 1)
-                thread.start()
+            else:
+                print "config_Load_Cur failed"
+    for x in range(157):
+    thread = Thread(name = "Thread-{}".format(x + 1))
+    print "Starting Thread-{}".format(x + 1)
+    thread.start()
