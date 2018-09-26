@@ -16,15 +16,14 @@ def json_Import_Cur(currency):
     return data
 def regex_Seperate(data):
     try:
-        var = json.dumps(data['Realtime Currency Exchange Rate'])
-        final = []
-
-        rl1 = re.search(r'("3.(.*?),)', var, )
-        rl2 = re.search(r'("4.(.*?),)', var, )
-        rl3 = re.search(r'("5.(.*?),)', var, )
-        rl4 = re.search(r'("6.(.*?),)', var, )
         whileloop == 1
         while whileloop == 1:
+            var = json.dumps(data['Realtime Currency Exchange Rate'])
+            final = []
+            rl1 = re.search(r'("3.(.*?),)', var, )
+            rl2 = re.search(r'("4.(.*?),)', var, )
+            rl3 = re.search(r'("5.(.*?),)', var, )
+            rl4 = re.search(r'("6.(.*?),)', var, )
             if rl1:
                 ob1 = rl1.group()
                 ss1 = re.search(r'(:(.*?)"(.*?)")', ob1, )
