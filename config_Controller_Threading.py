@@ -37,7 +37,7 @@ def config_Load_Cur():
                                 time.sleep(1)
                                 whileloop = 0
                             except (IOError, TypeError, KeyError):
-                    time.sleep(3)
+                                time.sleep(3)
                     else:
                         print "config_Load_Cur failed"
             Thread.start()
