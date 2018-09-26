@@ -1,7 +1,8 @@
 import importlib
 import database_Controller as database
 import json_Controller as jsc
-import config_Controller as config
+import config_Controller_Threading as config
+#import config_Controller as config
 
 #database.database_Read('gear', 'B')
 
