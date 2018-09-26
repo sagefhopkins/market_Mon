@@ -3,6 +3,7 @@ import json
 import re
 import io
 from colorama import init, Fore, Style, Back
+import time
 
 #Imports JSON data from web API, and returns data
 def json_Import_Cur(currency):
@@ -16,9 +17,11 @@ def json_Import_Cur(currency):
             return data
         except IOError:
             print "Issue encountered on json_Import_Cur"
+            time.sleep(20)
         except ValueError:
             print api
             print response
+            time.sleep(20)
 
 def regex_Seperate(data):
     try:

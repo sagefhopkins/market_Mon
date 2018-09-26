@@ -45,5 +45,6 @@ def config_Load_Cur():
                     thread = Thread(name = "Thread-{}".format(each_key), kwargs = {each_key: currency})
                     print "Starting Thread-{}".format(each_key)
                     thread.start()
+                    time.sleep(2)
                 else:
                     print "Error starting Thread-{}".format(each_key)
