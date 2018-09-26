@@ -41,7 +41,7 @@ def config_Load_Cur():
         for each_section in config.sections():
             for (each_key, each_val) in config.items(each_section):
                 if each_val == 'True':
-                    __init__(self, each_key)
+                    Thread.__init__(self, each_key)
                     thread = Thread(name = "Thread-{}".format(each_key))
                     print "Starting Thread-{}".format(each_key)
                     thread.start()
