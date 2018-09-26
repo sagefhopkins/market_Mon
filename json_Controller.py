@@ -77,5 +77,5 @@ def regex_Seperate(data):
         else:
             print "rl1 returned false"
             pass
-    except(KeyError, TypeError):
+    except(TypeError):
         pass
