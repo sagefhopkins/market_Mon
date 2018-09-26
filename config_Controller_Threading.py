@@ -44,6 +44,7 @@ def config_Load_Cur():
                 var = 1
                 if var != 5:
                     var + 1
+                    print var
                     currency = each_key
                     thread = Thread(name = "Thread-{}".format(each_key), kwargs = {each_key: currency})
                     print "Starting Thread-{}".format(each_key)
