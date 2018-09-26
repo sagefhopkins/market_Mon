@@ -23,10 +23,10 @@ def config_Load_Cur():
     for each_section in config.sections():
         for (each_key, each_val) in config.items(each_section):
             print "Starting Thread! for " + each_key
-            whileloop = 1
             if each_val == 'True':
                 class Thread(threading.Thread):
                     def run(self):
+                        whileloop = 1
                         while whileloop == 1:
                             try:
                                 data = jsc.json_Import_Cur(each_key)
