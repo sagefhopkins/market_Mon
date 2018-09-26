@@ -47,10 +47,12 @@ def config_Load_Cur():
                     thread.start()
                     var = 0
                     if var == 5:
+                        print "Throttle waitng 62 seconds"
                         time.sleep(62)
                         var = 0
                     else:
-                        var++
+                        var = var + 1
+                        print var
 
                 else:
                     print "Error starting Thread-{}".format(each_key)
