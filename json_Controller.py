@@ -72,7 +72,7 @@ def regex_Seperate(data):
                             final.insert(4, fl4)
                             return final
                         else:
-                            print"ss4 has returned false"
+                            print rl1 + "ss4 has returned false"
                             pass
                     else:
                         print "rl4 has returned false"
