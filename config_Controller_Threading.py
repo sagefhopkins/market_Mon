@@ -56,7 +56,8 @@ def config_Load_Cur():
                     while t:
                         mins, secs = divmod(t, 60)
                         timeformat = '{:02d}:{:02d}'.format(mins, secs)
-                        print(timeformat, end = "\n")
+                        stdout.write('Cooldown >> ' % timeformat)
                         time.sleep(1)
+                        stdout.write('\r')
                         t -= 1
                     var = 0
