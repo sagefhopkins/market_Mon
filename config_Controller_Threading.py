@@ -50,5 +50,6 @@ def config_Load_Cur():
                     thread.start()
                     time.sleep(2)
                 else:
-                    time.sleep(62)
                     print "Waitng for cooldown on throttle"
+                    time.sleep(62)
+                    var = 0
