@@ -29,8 +29,8 @@ def config_Load_Cur():
                     data = jsc.json_Import_Cur(re.sub('Thread-', '', threading.current_thread().name))
                     final = jsc.regex_Seperate(data)
                     dbc.database_Insert('cur_Mon', final[0], final[1], final[2], final[3])
-                    print Fore.GREEN + "-------------------------------------------------------------------------------------------"
-                    print Back.WHITE + Style.DIM + Fore.CYAN  + final[0] + Style.NORMAL + Fore.YELLOW + final[1]  + Fore.MAGENTA + Back.WHITE + final[2] + Fore.RED + Back.WHITE + final[3] + Fore.BLUE + Back.WHITE +" inserted into database" + Style.RESET_ALL
+                    print (Fore.GREEN + "-------------------------------------------------------------------------------------------")
+                    print (Back.WHITE + Style.DIM + Fore.CYAN  + final[0] + Style.NORMAL + Fore.YELLOW + final[1]  + Fore.MAGENTA + Back.WHITE + final[2] + Fore.RED + Back.WHITE + final[3] + Fore.BLUE + Back.WHITE +" inserted into database" + Style.RESET_ALL)
                     time.sleep(1)
                     whileloop = 0
                 except(IOError, TypeError, KeyError):
@@ -47,11 +47,11 @@ def config_Load_Cur():
                     print var
                     currency = each_key
                     thread = Thread(name = "Thread-{}".format(each_key), kwargs = {each_key: currency})
-                    print "Starting Thread-{}".format(each_key)
+                    print ("Starting Thread-{}".format(each_key))
                     thread.start()
                     time.sleep(2)
                 else:
-                    print "Waitng for cooldown on throttle"
+                    print ("Waitng for cooldown on throttle")
                     t = 62
                     while t:
                         mins, secs = divmod(t, 60)
