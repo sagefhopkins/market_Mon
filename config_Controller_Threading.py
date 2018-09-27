@@ -49,12 +49,11 @@ def config_Load_Cur():
                     thread = Thread(name = "Thread-{}".format(each_key), kwargs = {each_key: currency})
                     print ("Starting Thread-{}".format(each_key))
                     thread.start()
-                    time.sleep(2)
                 else:
                     print ("Waitng for cooldown on throttle")
                     t = 62
                     while t:
-                        stdout.write('Cooldown >> ' % t)
+                        stdout.write('\rCooldown >> %d' + t)
                         time.sleep(1)
                         stdout.write('\r')
                         t -= 1
