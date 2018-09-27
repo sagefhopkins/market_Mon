@@ -7,6 +7,7 @@ from colorama import init, Fore, Back, Style
 import threading
 import re
 import sys
+from __future__ import print_function
 
 def config_Add_Cur(currency):
     conf = open('config.ini', w)
@@ -55,7 +56,7 @@ def config_Load_Cur():
                     while t:
                         mins, secs = divmod(t, 60)
                         timeformat = '{:02d}:{:02d}'.format(mins, secs)
-                        sys.stdout.write(timeformat, end='\r')
+                        print(timeformat, end='\r')
                         time.sleep(1)
                         t -= 1
                     var = 0
