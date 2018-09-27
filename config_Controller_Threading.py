@@ -15,7 +15,7 @@ def config_Add_Cur(currency):
     config = ConfigParser.ConfigParser()
     config.add('currency', currency, True)
 
-    print currency + " added to config.ini"
+    print (currency + " added to config.ini")
 
 def config_Load_Cur():
     var = 0
