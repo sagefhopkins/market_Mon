@@ -27,7 +27,7 @@ def config_Load_Cur():
                     #Check this crazy shit, I have no idea if this will actually work for storing variables in a non shared memory space
                     data = jsc.json_Import_Cur(re.sub('Thread-', '', threading.current_thread().name))
                     final = jsc.regex_Seperate(data)
-                    dbc.database_Insert('cur_Mon', final[0], final[1], final[2], final[3])
+                    dbc.database_Insert(re.sub('Thread-', '' , threading.current_thread().name), final[0], final[1], final[2], final[3])
                     print (Fore.GREEN + "-------------------------------------------------------------------------------------------")
                     print (Back.WHITE + Style.DIM + Fore.CYAN  + final[0] + Style.NORMAL + Fore.YELLOW + final[1]  + Fore.MAGENTA + Back.WHITE + final[2] + Fore.RED + Back.WHITE + final[3] + Fore.BLUE + Back.WHITE +" inserted into database" + Style.RESET_ALL)
                     time.sleep(1)
