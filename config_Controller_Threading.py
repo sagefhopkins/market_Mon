@@ -50,8 +50,9 @@ def config_Load_Cur():
                     print ("Starting Thread-{}".format(each_key))
                     thread.start()
                 else:
+                    time.sleep(2)
                     print ("Waitng for cooldown on throttle")
-                    t = 62
+                    t = 60
                     while t:
                         stdout.write('\r\x1b[K'+t.__str__())
                         time.sleep(1)
