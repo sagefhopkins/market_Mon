@@ -42,7 +42,7 @@ def config_Load_Cur():
         for each_section in config.sections():
             for (each_key, each_val) in config.items(each_section):
                 if var != 5:
-                    var + 1
+                    var = var + 1
                     print var
                     currency = each_key
                     thread = Thread(name = "Thread-{}".format(each_key), kwargs = {each_key: currency})
