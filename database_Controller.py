@@ -11,7 +11,7 @@ def database_Connect():
 def database_Insert(table, ticker, currency, exchange, date ):
     try:
         sql = database_Connect()
-        query = "INSERT INTO `" + table + "` VALUES('"null + + ticker + "', '" + currency + "', '" + exchange + "', '" + date + "')"
+        query = "INSERT INTO " + '`'+ table + '`' + " VALUES('INTERGER PRIMARY KEY, " + ticker + "', '" + currency + "', '" + exchange + "', '" + date + "')"
         sql.execute(query)
         sql.commit()
     except(TypeError, KeyError):
