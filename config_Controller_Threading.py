@@ -53,7 +53,7 @@ def config_Load_Cur():
                     print ("Waitng for cooldown on throttle")
                     t = 62
                     while t:
-                        stdout.write('\r\x1b[K'+t.__str__()])
+                        stdout.write('\r\x1b[K'+t.__str__())
                         time.sleep(1)
                         stdout.flush()
                         t -= 1
