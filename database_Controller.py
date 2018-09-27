@@ -13,6 +13,7 @@ def database_Insert(table, ticker, currency, exchange, date ):
         sql = database_Connect()
         query = "INSERT INTO " + '`'+ table + '`' + " VALUES('`INTERGER PRIMARY KEY`, " + ticker + "', '" + currency + "', '" + exchange + "', '" + date + "')"
         sql.execute(query)
+        print (query)
         sql.commit()
     except(TypeError, KeyError):
         pass
