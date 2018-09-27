@@ -24,7 +24,6 @@ def config_Load_Cur():
             whileloop = 1
             while whileloop == 1:
                 try:
-
                     #Check this crazy shit, I have no idea if this will actually work for storing variables in a non shared memory space
                     data = jsc.json_Import_Cur(re.sub('Thread-', '', threading.current_thread().name))
                     final = jsc.regex_Seperate(data)
@@ -44,14 +43,13 @@ def config_Load_Cur():
             for (each_key, each_val) in config.items(each_section):
                 if var != 5:
                     var = var + 1
-                    print (var)
                     currency = each_key
                     thread = Thread(name = "Thread-{}".format(each_key), kwargs = {each_key: currency})
-                    print ("Starting Thread-{}".format(each_key))
                     thread.start()
                 else:
                     time.sleep(2)
-                    print ("Waitng for cooldown on throttle")
+                    print (Fore.GREEN + "-------------------------------------------------------------------------------------------")
+                    print (Fore.YELLOW + "Waitng for cooldown on throttle")
                     t = 60
                     while t:
                         stdout.write('\r\x1b[K'+t.__str__())
