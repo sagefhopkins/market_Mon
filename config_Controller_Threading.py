@@ -7,7 +7,7 @@ import time
 from colorama import init, Fore, Back, Style
 import threading
 import re
-import sys
+from sys import stdout
 
 def config_Add_Cur(currency):
     conf = open('config.ini', w)
