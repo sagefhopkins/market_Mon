@@ -55,6 +55,6 @@ def config_Load_Cur():
                     while t:
                         mins, secs = divmod(t, 60)
                         timeformat = '{:02d}:{:02d}'.format(mins, secs)
-                        print(timeformat, end='\r')
+                        print('\r' + timeformat)
                         t -= 1
                     var = 0
