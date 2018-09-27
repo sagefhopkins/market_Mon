@@ -30,7 +30,7 @@ def database_Read(table, currency):
 #to ensure uniformity between tables
 def database_Table(name):
     sql = database_Connect()
-    query = "CREATE TABLE " + name + " (id INTEGER PRIMARY KEY,ticker text , currency text, exchange int, date text)"
+    query = "CREATE TABLE " + name + " (`id INTEGER PRIMARY KEY`,`ticker text` , `currency text`, `exchange int`, `date text`)"
     sql.execute(query)
     sql.commit()
     print name + " New table created!"
