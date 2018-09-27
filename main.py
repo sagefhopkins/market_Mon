@@ -22,6 +22,7 @@ with open('config.ini') as f:
     for each_section in config.sections():
         for (each_key, each_val) in config.items(each_section):
                 database.database_Table(each_key)
+                time.sleep(1)
 
 # Table Desc
 #Curency,Currency Ticker, Exchange Rate , Open, High, Low, Close,
