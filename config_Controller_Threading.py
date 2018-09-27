@@ -1,3 +1,4 @@
+from __future__ import print_function
 import ConfigParser
 import io
 import json_Controller as jsc
@@ -7,7 +8,6 @@ from colorama import init, Fore, Back, Style
 import threading
 import re
 import sys
-from __future__ import print_function
 
 def config_Add_Cur(currency):
     conf = open('config.ini', w)
