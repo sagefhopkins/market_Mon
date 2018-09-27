@@ -47,7 +47,7 @@ def config_Load_Cur():
                     thread = Thread(name = "Thread-{}".format(each_key), kwargs = {each_key: currency})
                     thread.start()
                 else:
-                    time.sleep(2)
+                    time.sleep(4)
                     print (Fore.GREEN + "-------------------------------------------------------------------------------------------")
                     print (Fore.YELLOW + "Waitng for cooldown on throttle")
                     t = 60
