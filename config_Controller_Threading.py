@@ -54,9 +54,7 @@ def config_Load_Cur():
                     print ("Waitng for cooldown on throttle")
                     t = 62
                     while t:
-                        mins, secs = divmod(t, 60)
-                        timeformat = '{:02d}:{:02d}'.format(mins, secs)
-                        stdout.write('Cooldown >> ' % timeformat)
+                        stdout.write('Cooldown >> ' % t)
                         time.sleep(1)
                         stdout.write('\r')
                         t -= 1
