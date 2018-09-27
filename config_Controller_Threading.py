@@ -35,13 +35,12 @@ def config_Load_Cur():
                     time.sleep(3)
 
     with open('config.ini') as f:
-        var = 0
         conf = f.read()
         config = ConfigParser.RawConfigParser(allow_no_value=True)
         config.readfp(io.BytesIO(conf))
         for each_section in config.sections():
+            var = 0
             for (each_key, each_val) in config.items(each_section):
-                global var
                 if var != 5:
                     var + 1
                     print var
