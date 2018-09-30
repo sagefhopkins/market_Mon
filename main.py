@@ -15,7 +15,7 @@ import api_Key_Update as api_Key
 #config.config_Load_Cur()
 api_Key.new_Key_Pull('2')
 
-database.database_Read('cur_Mon', 'ILS')
+#database.database_Read('cur_Mon', 'ILS')
 
 # Table Desc
 #Curency,Currency Ticker, Exchange Rate , Open, High, Low, Close,
