@@ -66,14 +66,10 @@ def config_Load_Cur():
                             else:
                                 time.sleep(4)
                                 print (Fore.GREEN + "-------------------------------------------------------------------------------------------")
-                                print (Fore.YELLOW + "Waitng for cooldown on throttle")
-                                t = 60
-                                while t:
-                                    stdout.write('\r\x1b[K'+t.__str__())
-                                    time.sleep(1)
-                                    stdout.flush()
-                                    t -= 1
-                                var = 0
+                                print (Fore.YELLOW + "Switching API Keys")
+                                aku.cooldown_Key(api_Key_Num, "False")
+                                api_Key_Array = aku.new_Key_Pull(api_Key_Num)
+
 
             except(TypeError):
                 pass
