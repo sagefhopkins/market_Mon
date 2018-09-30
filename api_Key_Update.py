@@ -22,9 +22,9 @@ def new_Key_Pull(number):
     'cooldown': 'True'
     }
     } """
-    json = json.loads(data)
+    js = json.loads(data)
 
-    print(json['api' + number])
+    print(js['api' + number])
 
 #This function sets the current state of an API key to false, and then waits for 62 seconds
 #and resetts it to true in order to create a cooldown on each key so that api timeouts
