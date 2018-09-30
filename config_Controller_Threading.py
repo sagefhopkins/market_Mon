@@ -51,10 +51,10 @@ def config_Load_Cur():
                     api_Key_Numb = api_Key_Numb + 1
                     api_Key_Num = '' + api_Key_Numb
                     api_Key_Array = aku.new_Key_Pull(api_Key_Num)
-                except(TypeError):
-                    pass
             else:
                 print api_Key_Array[0]
+        except(TypeError):
+            pass
         for each_section in config.sections():
             for (each_key, each_val) in config.items(each_section):
                 if var != 5:
