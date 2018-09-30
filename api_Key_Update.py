@@ -5,10 +5,13 @@ import re
 
 
 def json_Data_Pull():
-    file = open('api_Keys.json', 'r')
-    data = json.load(file)
+    try:
+        file = open('api_Keys.json', 'r')
+        data = json.load(file)
 
-    return data
+        return data
+    except(TypeError):
+        pass
 
 #Each api key is assigned a number and when this function is called the specific
 #number given in parameters is called, if that number isn't on cooldown, it will
