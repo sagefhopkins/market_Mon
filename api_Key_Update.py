@@ -20,11 +20,11 @@ def new_Key_Pull(number):
     try:
         loads = json.loads(data)
         js = json.dumps(loads['api' + number])
-        cooldown = re.search(r'("cooldown": "(.*?)")', js, )
-        final = re.sub(r'"cooldown": "|"', '' , cooldown.group())
+        cooldown = re.search(r'(\'cooldown\': \'(.*?)\')', js, )
+        final = re.sub(r'\'cooldown\': \'|\'', '' , cooldown.group())
         arr.insert(1, final)
-        api = re.search(r'("api(.*)": "(.*?)"})', js, )
-        final2 = re.sub(r'"api(.*)": "|"|}', '', api.group())
+        api = re.search(r'(\'api(.*)\': \'(.*?)\'})', js, )
+        final2 = re.sub(r'\'api(.*)\': \'|\'|}', '', api.group())
         arr.insert(2, final2)
 
         return arr
