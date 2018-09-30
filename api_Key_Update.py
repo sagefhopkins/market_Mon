@@ -24,7 +24,6 @@ def new_Key_Pull(number):
     } """
     js = json.loads(data)
     print(js["api" + number])
-    print(re.sub('u\'cooldown\': u\'', '', js["api" + number].toString()))
 
 
 
