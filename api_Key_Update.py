@@ -10,7 +10,7 @@ def json_Data_Pull():
         data = json.load(file)
 
         return data
-    except(TypeError):
+    except(TypeError, ValueError):
         pass
 
 #Each api key is assigned a number and when this function is called the specific
