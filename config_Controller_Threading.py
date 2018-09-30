@@ -43,36 +43,37 @@ def config_Load_Cur():
         conf = f.read()
         config = ConfigParser.RawConfigParser(allow_no_value=True)
         config.readfp(io.BytesIO(conf))
-        try:
-            api_Key_Array = aku.new_Key_Pull(api_Key_Num)
-            print api_Key_Array
-            if api_Key_Array[0] == 'False':
-                while api_Key_Array[0] == 'False':
-                    api_Key_Numb = api_Key_Numb + 1
-                    api_Key_Num = '' + api_Key_Numb
-                    api_Key_Array = aku.new_Key_Pull(api_Key_Num)
-            else:
-                print api_Key_Array[0]
-                for each_section in config.sections():
-                    for (each_key, each_val) in config.items(each_section):
-                        if var != 5:
-                            api_Key = api_Key_Array[1]
-                            print api_Key
-                            var = var + 1
-                            currency = each_key
-                            thread = Thread(name = "Thread-{}".format(each_key), kwargs = {each_key: currency})
-                            thread.start()
-                        else:
-                            time.sleep(4)
-                            print (Fore.GREEN + "-------------------------------------------------------------------------------------------")
-                            print (Fore.YELLOW + "Waitng for cooldown on throttle")
-                            t = 60
-                            while t:
-                                stdout.write('\r\x1b[K'+t.__str__())
-                                time.sleep(1)
-                                stdout.flush()
-                                t -= 1
-                            var = 0
+        while 1 == 1:
+            try:
+                api_Key_Array = aku.new_Key_Pull(api_Key_Num)
+                print api_Key_Array
+                if api_Key_Array[0] == 'False':
+                    while api_Key_Array[0] == 'False':
+                        api_Key_Numb = api_Key_Numb + 1
+                        api_Key_Num = '' + api_Key_Numb
+                        api_Key_Array = aku.new_Key_Pull(api_Key_Num)
+                else:
+                    print api_Key_Array[0]
+                    for each_section in config.sections():
+                        for (each_key, each_val) in config.items(each_section):
+                            if var != 5:
+                                api_Key = api_Key_Array[1]
+                                print api_Key
+                                var = var + 1
+                                currency = each_key
+                                thread = Thread(name = "Thread-{}".format(each_key), kwargs = {each_key: currency})
+                                thread.start()
+                            else:
+                                time.sleep(4)
+                                print (Fore.GREEN + "-------------------------------------------------------------------------------------------")
+                                print (Fore.YELLOW + "Waitng for cooldown on throttle")
+                                t = 60
+                                while t:
+                                    stdout.write('\r\x1b[K'+t.__str__())
+                                    time.sleep(1)
+                                    stdout.flush()
+                                    t -= 1
+                                var = 0
 
-        except(TypeError):
-            pass
+            except(TypeError):
+                pass
