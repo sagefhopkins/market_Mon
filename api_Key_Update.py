@@ -32,7 +32,7 @@ def new_Key_Pull(number):
         print(final)
         api = re.search(r'("api(.*)": "(.*?)"})', js, )
         print (api.group())
-        final2 = re.sub(r'"api(.*)": "|"', '', api.group())
+        final2 = re.sub(r'"api(.*)": "|"|}', '', api.group())
         print(final2)
     except(TypeError):
         pass
