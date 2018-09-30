@@ -25,8 +25,8 @@ def new_Key_Pull(number):
     dat = json.loads(data)
     js = json.dumps(dat['api' + number])
     print(js)
-    cooldown = re.search(r'(: "(.*?)",(.*) : "(.*?)")', js, )
-    print (cooldown.group(1))
+    cooldown = re.search(r'("cooldown": "(.*?)")', js, )
+    print (cooldown.group())
 
 
 
