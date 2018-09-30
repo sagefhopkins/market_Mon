@@ -19,7 +19,7 @@ def config_Add_Cur(currency):
 
 def config_Load_Cur():
     var = 0
-    api_Key_Num = 1
+    api_Key_Num = '1'
     api_Key = ''
     class Thread(threading.Thread):
         def run(self):
