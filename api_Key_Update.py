@@ -11,7 +11,7 @@ def new_Key_Pull(number):
     data = """{
     "api1":{
     "api1": "Num 1",
-    "cooldown": "True"
+    "cooldown": "False"
     },
     "api2":{
     "api2": "Num 2",
