@@ -22,10 +22,10 @@ def new_Key_Pull(number):
     "cooldown": "True"
     }
     } """
-    js = json.loads(data)
-    print(js["api" + number])
-    str = '' + js["api" + number]
-    print(re.sub('u|\'|,|:|}|{', '', str))
+    dat = json.loads(data)
+    js = json.dumps(dat['api' + number])
+    print(js)
+    print(re.sub('u|\'|,|:|}|{', '', js))
 
 
 
