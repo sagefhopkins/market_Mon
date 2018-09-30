@@ -1,4 +1,5 @@
 {
+{
   "name": "api1",
   "key": "insert vale",
   "cooldown": "True"
@@ -207,4 +208,5 @@
   "name": "api42",
   "key": "insert vale",
   "cooldown": "True"
+}
 }
