@@ -8,7 +8,7 @@ import re
 #number given in parameters is called, if that number isn't on cooldown, it will
 #be returned, otherwise the function will at +1 to that and find another key
 def new_Key_Pull(number):
-    data = {
+    data = """{
     "api key list": {
     'api1': 'Num 1',
     'cooldown': 'True'
@@ -21,7 +21,7 @@ def new_Key_Pull(number):
     'api3': '',
     'cooldown': 'True'
     }
-    }
+    } """
     json = json.loads(data)
 
     print(json['api' + number])
