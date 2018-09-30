@@ -24,7 +24,8 @@ def new_Key_Pull(number):
     } """
     js = json.loads(data)
     print(js["api" + number])
-    print(re.sub('u\'cooldown\': u\'', ))
+    print(re.sub('u\'cooldown\': u\'', '', js["api" + number]))
+
 
 
 #This function sets the current state of an API key to false, and then waits for 62 seconds
