@@ -28,7 +28,7 @@ def new_Key_Pull(number):
         print(js)
         cooldown = re.search(r'("cooldown": "(.*?)")', js, )
         print (cooldown.group())
-        final = re.sub(r'"cooldown": "|"', '' , cooldown)
+        final = re.sub(r'"cooldown": "|"', '' , cooldown.group())
         print(final)
     except(TypeError):
         pass
