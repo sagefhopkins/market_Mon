@@ -7,6 +7,7 @@ import re
 def json_Data_Pull():
     file = open('api_Keys.json', 'r')
     data = json.load(file)
+    print data
 
     return data
 
