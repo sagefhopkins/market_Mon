@@ -31,8 +31,7 @@ def new_Key_Pull(number):
         final = re.sub(r'"cooldown": "|"', '' , cooldown)
         print(final)
     except(TypeError):
-
-
+        print('here')
 
 #This function sets the current state of an API key to false, and then waits for 62 seconds
 #and resetts it to true in order to create a cooldown on each key so that api timeouts
