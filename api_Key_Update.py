@@ -9,22 +9,22 @@ import re
 #be returned, otherwise the function will at +1 to that and find another key
 def new_Key_Pull(number):
     data = """{
-    "api key list": {
+    "api1":{
     "api1": "Num 1",
     "cooldown": "True"
     },
-    {
+    "api2":{
     "api2": "Num 2",
     "cooldown": "False"
     },
-    {
+    "api3":{
     "api3": "Num 3",
     "cooldown": "True"
     }
     } """
     js = json.loads(data)
 
-    print(js['api' + number])
+    print(js["api" + number])
 
 #This function sets the current state of an API key to false, and then waits for 62 seconds
 #and resetts it to true in order to create a cooldown on each key so that api timeouts
