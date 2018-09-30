@@ -12,8 +12,8 @@ import api_Key_Update as api_Key
 
 #jsc.json_Interpret_Cur("ILS")
 #database.database_Table('cur_Mon')
-#config.config_Load_Cur()
-print(api_Key.new_Key_Pull('2'))
+config.config_Load_Cur()
+#print(api_Key.new_Key_Pull('2'))
 
 #database.database_Read('cur_Mon', 'ILS')
 
