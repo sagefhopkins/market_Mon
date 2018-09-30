@@ -10,16 +10,16 @@ import re
 def new_Key_Pull(number):
     data = """{
     "api key list": {
-    'api1': 'Num 1',
-    'cooldown': 'True'
+    "api1": "Num 1",
+    "cooldown": "True"
     },
     {
-    'api2': 'Num 2',
-    'cooldown': 'False'
+    "api2": "Num 2",
+    "cooldown": "False"
     },
     {
-    'api3': '',
-    'cooldown': 'True'
+    "api3": "Num 3",
+    "cooldown": "True"
     }
     } """
     js = json.loads(data)
