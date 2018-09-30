@@ -22,12 +22,15 @@ def new_Key_Pull(number):
     "cooldown": "True"
     }
     } """
-    dat = json.loads(data)
-    js = json.dumps(dat['api' + number])
-    print(js)
-    cooldown = re.search(r'("cooldown": "(.*?)")', js, )
-    print (cooldown.group())
-    final = re.sub(r'"cooldown": "|"', '' , cooldown)
+    try:
+        dat = json.loads(data)
+        js = json.dumps(dat['api' + number])
+        print(js)
+        cooldown = re.search(r'("cooldown": "(.*?)")', js, )
+        print (cooldown.group())
+        final = re.sub(r'"cooldown": "|"', '' , cooldown)
+        print(final)
+    except(TypeError):
 
 
 
