@@ -1,4 +1,4 @@
-"""{
+{
   "api1":{
   "api1": "Num 1",
   "cooldown": "False"
@@ -11,4 +11,4 @@
   "api3": "Num 3",
   "cooldown": "True"
   }
-  } """
+  }
