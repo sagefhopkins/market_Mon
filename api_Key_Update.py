@@ -25,7 +25,7 @@ def new_Key_Pull(number):
     dat = json.loads(data)
     js = json.dumps(dat['api' + number])
     print(js)
-    print(re.sub('u|"|,|:|}|{', '', js))
+    print (re.search(r'{"cooldown": "(.*?)', js, ))
 
 
 
