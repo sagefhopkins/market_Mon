@@ -6,6 +6,7 @@ import time
 from colorama import init, Fore, Back, Style
 import threading
 import re
+import api_Key_Update as aku
 from sys import stdout
 
 def config_Add_Cur(currency):
@@ -18,13 +19,15 @@ def config_Add_Cur(currency):
 
 def config_Load_Cur():
     var = 0
+    api_Key_Num = 1
+    api_Key = ''
     class Thread(threading.Thread):
         def run(self):
             whileloop = 1
             while whileloop == 1:
                 try:
                     #Check this crazy shit, I have no idea if this will actually work for storing variables in a non shared memory space
-                    data = jsc.json_Import_Cur(re.sub('Thread-', '', threading.current_thread().name))
+                    data = jsc.json_Import_Cur(re.sub('Thread-', '', threading.current_thread().name), api_Key)
                     final = jsc.regex_Seperate(data)
                     name = (re.sub('Thread-', '' , threading.current_thread().name))
                     dbc.database_Insert(name, final[0], final[1], final[2], final[3])
@@ -42,6 +45,12 @@ def config_Load_Cur():
         for each_section in config.sections():
             for (each_key, each_val) in config.items(each_section):
                 if var != 5:
+                    api_Key_Array = aku.new_Key_Pull(api_Key_Num)
+                    while api_Key_Array[0] == 'False':
+                        api_Key_Num = api_Key_Num + 1
+                        api_Key_Array = aku.new_Key_Pull(api_Key_Num)
+                    api_Key = api_Key_Array[1]
+                    print api_Key
                     var = var + 1
                     currency = each_key
                     thread = Thread(name = "Thread-{}".format(each_key), kwargs = {each_key: currency})

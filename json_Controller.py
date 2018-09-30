@@ -6,12 +6,12 @@ from colorama import init, Fore, Style, Back
 import time
 
 #Imports JSON data from web API, and returns data
-def json_Import_Cur(currency):
+def json_Import_Cur(currency, api):
     whileloop = 1
     while whileloop == 1:
         try:
-            api = "http://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=USD&to_currency=" + currency + "&apikey=GPR3TT0J4AM2EBBQ"
-            response = url.urlopen(api)
+            url_Api = "http://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=USD&to_currency=" + currency + "&apikey=GPR3TT0J4AM2EBBQ"
+            response = url.urlopen(url_Api)
             data = json.loads(response.read())
             whileloop = 0
             return data
