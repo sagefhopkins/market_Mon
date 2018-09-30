@@ -20,7 +20,7 @@ def config_Add_Cur(currency):
 def config_Load_Cur():
     var = 0
     api_Key_Numb = 1
-    api_Key_Num = '' + str(api_Key_Numb) + ''
+    api_Key_Num = str(api_Key_Numb)
     api_Key = ''
     class Thread(threading.Thread):
         def run(self):
@@ -50,7 +50,7 @@ def config_Load_Cur():
                 if api_Key_Array[0] == 'False':
                     while api_Key_Array[0] == 'False':
                         api_Key_Numb = api_Key_Numb + 1
-                        api_Key_Num = '' + api_Key_Numb
+                        api_Key_Num = str(api_Key_Numb)
                         api_Key_Array = aku.new_Key_Pull(api_Key_Num)
                 else:
                     print api_Key_Array[0]
