@@ -47,6 +47,7 @@ def config_Load_Cur():
                 if var != 5:
                     try:
                         api_Key_Array = aku.new_Key_Pull(api_Key_Num)
+                        print api_Key_Array
                         while api_Key_Array[0] == 'False':
                             api_Key_Num = api_Key_Num + 1
                             api_Key_Array = aku.new_Key_Pull(api_Key_Num)
