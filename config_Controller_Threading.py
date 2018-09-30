@@ -42,17 +42,17 @@ def config_Load_Cur():
         conf = f.read()
         config = ConfigParser.RawConfigParser(allow_no_value=True)
         config.readfp(io.BytesIO(conf))
+        try:
+            api_Key_Array = aku.new_Key_Pull(api_Key_Num)
+            print api_Key_Array
+            while api_Key_Array[0] == 'False':
+                api_Key_Num = api_Key_Num + 1
+                api_Key_Array = aku.new_Key_Pull(api_Key_Num)
+            except(TypeError):
+                pass
         for each_section in config.sections():
             for (each_key, each_val) in config.items(each_section):
                 if var != 5:
-                    try:
-                        api_Key_Array = aku.new_Key_Pull(api_Key_Num)
-                        print api_Key_Array
-                        while api_Key_Array[0] == 'False':
-                            api_Key_Num = api_Key_Num + 1
-                            api_Key_Array = aku.new_Key_Pull(api_Key_Num)
-                    except(TypeError):
-                        pass
                     api_Key = api_Key_Array[1]
                     print api_Key
                     var = var + 1
