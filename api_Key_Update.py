@@ -18,14 +18,18 @@ def new_Key_Pull(number):
     arr = []
     try:
         loads = json.loads(data)
-        js = json.dumps(loads['api' + number])
-        print (js)
-        cooldown = re.search(r'("cooldown": "(.*?)")', js, )
-        final = re.sub(r'"cooldown": "|"', '' , cooldown.group())
-        arr.insert(1, final)
-        api = re.search(r'("api(.*)": "(.*?)"})', js, )
-        final2 = re.sub(r'"api(.*)": "|"|}', '', api.group())
-        arr.insert(2, final2)
+        #js = json.dumps(loads['api' + number])
+        #print (js)
+        #cooldown = re.search(r'("cooldown": "(.*?)")', js, )
+        #final = re.sub(r'"cooldown": "|"', '' , cooldown.group())
+        #arr.insert(1, final)
+        #api = re.search(r'("api(.*)": "(.*?)"})', js, )
+        #final2 = re.sub(r'"api(.*)": "|"|}', '', api.group())
+        #arr.insert(2, final2)
+        cooldown = loads['api' + number]['cooldown']
+        api = loads['api' + number]['api' + number]
+        arr.insert(0, cooldown)
+        arr.insert(1, api)
 
         return arr
     except(TypeError):
