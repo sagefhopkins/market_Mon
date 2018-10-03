@@ -1,7 +1,7 @@
 import importlib
 import database_Controller as database
 import json_Controller as jsc
-import config_Controller_Threading as config
+import config_Controller_Rebuild as config
 import api_Key_Update as api_Key
 #import config_Controller as config
 
@@ -12,8 +12,7 @@ import api_Key_Update as api_Key
 
 #jsc.json_Interpret_Cur("ILS")
 #database.database_Table('cur_Mon')
-print(api_Key.new_Key_Pull('2'))
-#print(api_Key.new_Key_Pull('2'))
+config.config_Load_Cur()
 
 #database.database_Read('cur_Mon', 'ILS')
 

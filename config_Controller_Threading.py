@@ -20,7 +20,6 @@ def config_Add_Cur(currency):
 def config_Load_Cur():
     var = 0
     api_Key_Numb = 1
-    api_Key_Num = str(api_Key_Numb)
     api_Key = ''
     class Thread(threading.Thread):
         def run(self):
@@ -45,13 +44,16 @@ def config_Load_Cur():
         config.readfp(io.BytesIO(conf))
         while 1 == 1:
             try:
-                api_Key_Array = aku.new_Key_Pull(api_Key_Num)
+                api_Key_Array = aku.new_Key_Pull(str(api_Key_Numb))
                 print api_Key_Array
                 if api_Key_Array[0] == 'False':
                     while api_Key_Array[0] == 'False':
-                        api_Key_Numb = api_Key_Numb + 1
-                        api_Key_Num = str(api_Key_Numb)
-                        api_Key_Array = aku.new_Key_Pull(api_Key_Num)
+                        if api_Key_Numb != 3:
+                            api_Key_Numb = api_Key_Numb + 1
+                            print (api_Key_Numb)
+                            api_Key_Array = aku.new_Key_Pull(api_Key_Num)
+                        else:
+                            api_Key_Numb = 1
                 else:
                     print api_Key_Array[0]
                     for each_section in config.sections():
@@ -67,8 +69,10 @@ def config_Load_Cur():
                                 time.sleep(4)
                                 print (Fore.GREEN + "-------------------------------------------------------------------------------------------")
                                 print (Fore.YELLOW + "Switching API Keys")
-                                aku.cooldown_Key(api_Key_Num, "False")
-                                api_Key_Array = aku.new_Key_Pull(api_Key_Num)
+                                print(api_Key_Numb)
+                                aku.cooldown_Key(str(api_Key_Numb), 'False')
+                                var = 1
+                                api_Key_Array = aku.new_Key_Pull(str(api_Key_Numb))
 
 
             except(TypeError):

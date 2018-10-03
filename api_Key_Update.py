@@ -4,20 +4,15 @@ import time
 import re
 
 
-def json_Data_Pull():
-    data = open('api_Keys.json', 'r')
-    print data
-
-    return data
-
 #Each api key is assigned a number and when this function is called the specific
 #number given in parameters is called, if that number isn't on cooldown, it will
 #be returned, otherwise the function will at +1 to that and find another key
 def new_Key_Pull(number):
-    data = json_Data_Pull()
+    with open('api_Keys.json') as f:
+        data = json.load(f)
+        print(data)
     arr = []
     try:
-        loads = json.loads(data)
         #js = json.dumps(loads['api' + number])
         #print (js)
         #cooldown = re.search(r'("cooldown": "(.*?)")', js, )
@@ -26,8 +21,8 @@ def new_Key_Pull(number):
         #api = re.search(r'("api(.*)": "(.*?)"})', js, )
         #final2 = re.sub(r'"api(.*)": "|"|}', '', api.group())
         #arr.insert(2, final2)
-        cooldown = loads['api' + number]['cooldown']
-        api = loads['api' + number]['api' + number]
+        cooldown = data['api' + number]['cooldown']
+        api = data['api' + number]['api' + number]
         arr.insert(0, cooldown)
         arr.insert(1, api)
 
@@ -39,5 +34,14 @@ def new_Key_Pull(number):
 #and resetts it to true in order to create a cooldown on each key so that api timeouts
 #don't occurr
 def cooldown_Key(api, cooldown):
-    loads = json.loads(json_Data_Pull())
-    loads[api]["cooldown"] = cooldown
+    with open('api_Keys.json') as r:
+        data = json.load(r)
+    with open('api_Keys.json', 'w') as f:
+        old_Cooldown = data['api' + str(api)]['cooldown']
+        data['api' + str(api)]['cooldown'] = cooldown
+        print(data)
+        json.dump(data, f)
+        time.sleep(60)
+        data['api' + str(api)]['cooldown'] = old_Cooldown
+        json.dump(data, f)
+    return data
