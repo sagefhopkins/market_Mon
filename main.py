@@ -2,17 +2,18 @@ import importlib
 import database_Controller as database
 import json_Controller as jsc
 import config_Controller_Rebuild as config
-import api_Key_Update as api_Key
+import interface_Controller as ic
 #import config_Controller as config
 
 #database.database_Read('gear', 'B')
 
 #API key GPR3TT0J4AM2EBBQ
-
+#database.database_Table('ILS')
+ic.main()
 
 #jsc.json_Interpret_Cur("ILS")
 #database.database_Table('cur_Mon')
-config.config_Load_Cur()
+#config.config_Load_Cur()
 
 #database.database_Read('cur_Mon', 'ILS')
 

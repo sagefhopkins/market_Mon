@@ -11,10 +11,10 @@ def database_Connect():
 def database_Insert(table, ticker, currency, exchange, date ):
     try:
         sql = database_Connect()
-        query = "INSERT INTO " + '`'+ table + '`' + " VALUES('`id INTEGER PRIMARY KEY`','" + ticker + "', '" + currency + "', '" + exchange + "', '" + date + "')"
+        query = "INSERT INTO " + '`'+ table + '`' + " VALUES('`id` INTEGER PRIMARY KEY','" + ticker + "', '" + currency + "', '" + exchange + "', '" + date + "')"
         sql.execute(query)
         sql.commit()
-    except(TypeError, KeyError):
+    except():
         pass
         print "Error occurred databasing!"
 
@@ -24,13 +24,13 @@ def database_Read(table, currency):
     sql = database_Connect()
     query = "SELECT * FROM " + table + " WHERE currency LIKE '" + currency + "%'"
     for row in sql.execute(query):
-        print row
+        return row
 
 #Creates new tables into the database, this will always use the same format
 #to ensure uniformity between tables
 def database_Table(name):
     sql = database_Connect()
-    query = "CREATE TABLE `" + name + "` (`id INTEGER PRIMARY KEY`,`ticker text` , `currency text`, `exchange int`, `date text`)"
+    query = "CREATE TABLE `" + name + "` (`id` INTEGER PRIMARY KEY,`ticker` text , `currency` text, `exchange` float, `date` timestamp)"
     sql.execute(query)
     sql.commit()
     print name + " New table created!"

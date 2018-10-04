@@ -11,7 +11,6 @@ def json_Import_Cur(currency, api):
     while whileloop == 1:
         try:
             url_Api = "http://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=USD&to_currency=" + str(currency) + "&apikey=" + str(api)
-            print(url_Api)
             response = url.urlopen(url_Api)
             data = json.loads(response.read())
             whileloop = 0
