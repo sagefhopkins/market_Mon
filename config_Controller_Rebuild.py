@@ -6,7 +6,6 @@ import time
 from colorama import init, Fore, Back, Style
 import threading
 import re
-import api_Key_Update as aku
 import json
 from sys import stdout
 
@@ -20,12 +19,10 @@ def config_Add_Cur(currency):
 #Function used to load all currency data from config.ini and to pull current
 #Market data related to the relative tickers
 def config_Load_Cur():
-    api_Key = ''
+    api_Key = '967OAAEVKJ9WT8F1'
     arr = []
     whilel = 1
     var = 1
-
-    Array = aku.new_Key_Pull(str(1))
 
     with open('config.ini') as f:
         conf = f.read()
@@ -35,7 +32,7 @@ def config_Load_Cur():
             for (each_key, each_val) in config.items('currency'):
                 try:
                     currency = each_key
-                    data = jsc.json_Import_Cur(currency, Array[1])
+                    data = jsc.json_Import_Cur(currency, api_Key)
                     print(data)
                     print('-----------')
                     arr.insert(0, data['Realtime Currency Exchange Rate']['3. To_Currency Code'])
