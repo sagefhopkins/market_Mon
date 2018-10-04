@@ -1,1 +1,1 @@
-{"api1": {"cooldown": "False", "api1": "967OAAEVKJ9WT8F1"}, "api2": {"cooldown": "True", "api2": "94YKDAN6GEF7SNJL"}, "api3": {"cooldown": "True", "api3": "FATHMDJPAMSEZ2BR"}}{"api1": {"cooldown": "True", "api1": "967OAAEVKJ9WT8F1"}, "api2": {"cooldown": "True", "api2": "94YKDAN6GEF7SNJL"}, "api3": {"cooldown": "True", "api3": "FATHMDJPAMSEZ2BR"}}
+{"api1": {"cooldown": "True", "api_Key": "967OAAEVKJ9WT8F1"}, "api2": {"cooldown": "False", "api_Key": "94YKDAN6GEF7SNJL"}, "api3": {"cooldown": "False", "api_Key": "FATHMDJPAMSEZ2BR"}}

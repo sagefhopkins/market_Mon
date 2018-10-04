@@ -10,19 +10,11 @@ import re
 def new_Key_Pull(number):
     with open('api_Keys.json') as f:
         data = json.load(f)
-        print(data)
+        print(number)
     arr = []
     try:
-        #js = json.dumps(loads['api' + number])
-        #print (js)
-        #cooldown = re.search(r'("cooldown": "(.*?)")', js, )
-        #final = re.sub(r'"cooldown": "|"', '' , cooldown.group())
-        #arr.insert(1, final)
-        #api = re.search(r'("api(.*)": "(.*?)"})', js, )
-        #final2 = re.sub(r'"api(.*)": "|"|}', '', api.group())
-        #arr.insert(2, final2)
         cooldown = data['api' + number]['cooldown']
-        api = data['api' + number]['api' + number]
+        api = data['api' + number]['api_Key']
         arr.insert(0, cooldown)
         arr.insert(1, api)
 
@@ -36,12 +28,10 @@ def new_Key_Pull(number):
 def cooldown_Key(api, cooldown):
     with open('api_Keys.json') as r:
         data = json.load(r)
+        r.close()
     with open('api_Keys.json', 'w') as f:
         old_Cooldown = data['api' + str(api)]['cooldown']
         data['api' + str(api)]['cooldown'] = cooldown
-        print(data)
+        f.seek(0)
         json.dump(data, f)
-        time.sleep(60)
-        data['api' + str(api)]['cooldown'] = old_Cooldown
-        json.dump(data, f)
-    return data
+        f.close()
