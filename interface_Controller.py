@@ -71,15 +71,28 @@ def main():
                 print('t')
 
             elif opt_1_2_1 == 'Show Total Change':
-                query = ("SELECT `exchange` FROM {0}").format(currency)
+                query = "SELECT `exchange`, `date` FROM {0} ORDER BY `exchange` ASC".format(currency)
                 cursor = sql.cursor()
                 cursor.execute(query)
                 results = cursor.fetchall()
                 data_opt_1_2_1 = [list(i) for i in results]
-                print results
-                results = map(lambda i: int(i[0]), results)
+                #print results
+                change = map(lambda i: i[0], results)
+                dates  = map(lambda x: x[1], results)
 
-                print (data_opt_1_2_1)
+                puts('Minimum: {0}'.format(change[-1]))
+                puts('Mindate: {0}'.format(time.ctime(dates[-1])))
+                puts('Maximum: {0}'.format(change[0]))
+                puts('Maxdate: {0}'.format(time.ctime(dates[0])))
+
+                change = change[0] - change[-1]
+                puts('Total change: ', newline=False) 
+                if change > 0:
+                    puts(colored.green('+{0}'.format(change)))
+                else:
+                    puts(colored.red(str(change)))
+
+                #print (data_opt_1_2_1)
 
             elif opt_1_2_1 == 'Return Home':
                 print(chr(27) + '[2J')
