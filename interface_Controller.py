@@ -71,13 +71,13 @@ def main():
                 print('t')
 
             elif opt_1_2_1 == 'Show Total Change':
-                query = ("SELECT `exchange int` FROM {0}").format(currency)
+                query = ("SELECT `exchange` FROM {0}").format(currency)
                 cursor = sql.cursor()
                 cursor.execute(query)
                 results = cursor.fetchall()
                 data_opt_1_2_1 = [list(i) for i in results]
                 print results
-                results = map(int, results)
+                results = map(lambda i: int(i[0]), results)
 
                 print (data_opt_1_2_1)
 
