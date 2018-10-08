@@ -1,5 +1,4 @@
 import sqlite3
-from colorama import init
 
 #Initializes database connection and returns connection to function caller
 def database_Connect():
@@ -11,8 +10,8 @@ def database_Connect():
 def database_Insert(table, ticker, currency, exchange, date ):
     try:
         sql = database_Connect()
-        query = "INSERT INTO " + '`'+ table + '`' + " VALUES('`id` INTEGER PRIMARY KEY','" + ticker + "', '" + currency + "', '" + exchange + "', '" + date + "')"
-        sql.execute(query)
+        query = "INSERT INTO `{0}` VALUES(NULL, ?, ?, ?, ?)".format(table)
+        sql.execute(query, (ticker, currency, exchange, date) )
         sql.commit()
     except():
         pass

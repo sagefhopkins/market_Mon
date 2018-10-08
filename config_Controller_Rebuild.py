@@ -38,7 +38,7 @@ def config_Load_Cur():
                     arr.insert(1, data['Realtime Currency Exchange Rate']['4. To_Currency Name'])
                     arr.insert(2, data['Realtime Currency Exchange Rate']['5. Exchange Rate'])
                     arr.insert(3, data['Realtime Currency Exchange Rate']['6. Last Refreshed'])
-                    dbc.database_Insert(str(arr[0]), str(arr[0]), str(arr[1]), arr[2], time.time())
+                    dbc.database_Insert(str(arr[0]), str(arr[0]), str(arr[1]), float(arr[2]), time.time())
                     print (Fore.GREEN + "-------------------------------------------------------------------------------------------")
                     print (Back.WHITE + Style.DIM + Fore.CYAN  + arr[0] + Style.NORMAL + Fore.YELLOW + arr[1]  + Fore.MAGENTA + Back.WHITE + arr[2] + Fore.RED + Back.WHITE + arr[3] + Fore.BLUE + Back.WHITE +" inserted into database" + Style.RESET_ALL)
                     if var == 4:
